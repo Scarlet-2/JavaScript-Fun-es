@@ -4,6 +4,25 @@ function inicio() {
     nome();
     var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Extrato 3.) Saque 4.) Depósito 5.) Transferência 6.) Sair'));
 
+    switch (escolha) {
+        case 1:
+            ver_saldo();
+        case 2:
+            ver_extrato();
+        case 3:
+            fazer_saque();
+        case 4:
+            fazer_deposito();
+        case 5:
+            fazer_transferencia();
+        case 6:
+            sair();
+        default:
+            erro();
+    }
+
+
+    /*
     if (escolha === 1) {
         ver_saldo();
     } else if (escolha === 2) {
@@ -19,6 +38,7 @@ function inicio() {
     } else {
         erro();
     }
+    */
 }
 
 function nome() {
