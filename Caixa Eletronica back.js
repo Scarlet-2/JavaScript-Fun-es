@@ -17,6 +17,7 @@ function inicio() {
             fazer_transferencia();
         case 6:
             sair();
+            break;
         default:
             erro();
     }
@@ -41,10 +42,13 @@ function inicio() {
     */
 }
 
+var nome_permanente = "";
+
 function nome() {
     var nome = prompt("Por favor informe seu nome: ");
     if (isNaN(nome) == true) {
         alert("Olá " + nome + " é um prazer ter você por aqui!");
+        nome_permanente = nome;
     } else {
         alert("Não aceitamos numeros.");
         inicio();
@@ -131,14 +135,14 @@ function validar_senha() {
 }
 
 function erro() {
-    alert('Por favor, informe um número:');
+    alert("Operação não autorizada");
     inicio();
 }
 
 function sair() {
     var confirma = confirm('Você deseja sair?');
     if (confirma) {
-        alert(nome + ", foi um prazer ter você por aqui!");
+        alert(nome_permanente + ", foi um prazer ter você por aqui!");
         window.close();
     } else {
         inicio();
